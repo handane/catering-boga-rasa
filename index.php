@@ -82,7 +82,7 @@ require('./app/database/db.php');
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
-						<h3><span class="orange-text">Produk</span> Teratas</h3>
+						<h3><span class="orange-text">Highlight</span> Hari Ini</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
 					</div>
 				</div>

@@ -19,7 +19,7 @@ $p = mysqli_fetch_array($produk);
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Puddy Lova</title>
+	<?php include('./include/title.php') ?>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
@@ -86,7 +86,6 @@ $p = mysqli_fetch_array($produk);
 					<div class="col-md-7">
 						<div class="single-product-content">
 							<h3><?php echo $p['nama_produk'] ?></h3>
-							<p class="single-product-pricing"><span>Rp <?php echo number_format($p['harga']) ?></span></p>
 							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p> -->
 							<div class="single-product-form">
 								<?php 
@@ -96,14 +95,14 @@ $p = mysqli_fetch_array($produk);
 									<?php 
 								}
 								if($status_user == 'Pelanggan Lama'){ ?>
-								<p><strong>Promo: </strong><?php echo $p['promo_lama'] ?>%</p>
+								<p><strong>Diskon: </strong><?php echo $p['promo_lama'] ?>%</p>
 								<?php } ?>
-								
-								<p><strong>Stok: </strong><?php echo $p['stok_produk'] ?></p>
+
 								<p class="mb-1"><strong>Deskripsi Produk</strong></p>
 								<p style="text-align: justify;"><?php echo $p['deskripsi'] ?></p>
 								<p><strong>Jumlah Beli</strong></p>
 								<input type="number" name="jumlah" value="1">
+								<p class="single-product-pricing"><span>Rp <?php echo number_format($p['harga']) ?></span></p>
 							</div>
 							<h4></h4>
 							<input type="hidden" name="id_produk" value="<?= $id_produk ?>">

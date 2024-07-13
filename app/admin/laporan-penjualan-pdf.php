@@ -45,7 +45,7 @@ $tgl_finish = date('d-m-Y', strtotime($tgl_finish_awal));
     <main>
         <div class="container-fluid px-3">
           <div style="text-align: center;" class="mb-4">
-            <h4 class="mb-2">LAPORAN PENJUALAN</h4>
+            <h4 class="mb-2">LAPORAN PENJUALAN CATERING</h4>
             <h6 class="mt-2 mb-2"><?= $tgl_start ?>
              s/d <?= $tgl_finish ?></h6>
           </div>

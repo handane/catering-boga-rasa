@@ -23,7 +23,7 @@ if ($row < 1) {
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Puddy Lova</title>
+	<?php include('./include/title.php') ?>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
@@ -64,7 +64,7 @@ if ($row < 1) {
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Transaksi</p>
+						<p style="color:white">Transaksi</p>
 						<h1>Riwayat Pembelian</h1>
 					</div>
 				</div>
@@ -74,7 +74,8 @@ if ($row < 1) {
 	<!-- end breadcrumb section -->
 
 	<!-- cart -->
-	<div class="cart-section mt-150 mb-150">
+	<h5 class="mb-5 mt-5 text-center">Lanjutkan Pembayaran Anda</h5>
+	<div class="cart-section mb-150 mt-5">
 		<div class="container">
 		<form action="" method="POST">
 			<div class="row">
@@ -131,6 +132,7 @@ if ($row < 1) {
 								<?php } ?>
 							</tbody>
 						</table>
+						<a href="invoice.php" class="cart-btn col-md-2 text-center mt-4" style="background-color: #fa9d02;">Lihat Invoice</a>
 					</div>
 				</div>
 			</div>

@@ -17,7 +17,7 @@ $p = mysqli_fetch_array($profil);
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Puddy Lova</title>
+	<?php include('./include/title.php') ?>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">

@@ -23,7 +23,7 @@ $status_pelanggan = $_SESSION['user']['status'];
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Puddy Lova</title>
+	<?php include('./include/title.php') ?>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
@@ -85,14 +85,14 @@ $status_pelanggan = $_SESSION['user']['status'];
 								<tr class="table-head-row">
 									<th class="product-image"></th>
 									<th class="product-image">Image</th>
-									<th class="product-name">Nama</th>
+									<th class="product-name">Menu Catering</th>
 									<th class="product-price">Harga</th>
 
 									<?php if($status_pelanggan == "Pelanggan Lama"){ ?>
 										<th class="product-quantity">Promo(%)</th>
 									<?php }else{
 										?>
-										<th class="product-quantity">Promo(%)</th>
+										<th class="product-quantity">Diskon (%)</th>
 										<?php 
 									} ?>
 									<th class="product-quantity">Jumlah</th>
