@@ -2,7 +2,29 @@
 error_reporting(0);
 session_start();
 require('./app/database/db.php');
+
+// Atur zona waktu ke Waktu Indonesia Barat
+date_default_timezone_set('Asia/Makassar');
+
+// Daftar nama hari dalam Bahasa Indonesia
+$nama_hari = array(
+    'Sunday' => 'Minggu',
+    'Monday' => 'Senin',
+    'Tuesday' => 'Selasa',
+    'Wednesday' => 'Rabu',
+    'Thursday' => 'Kamis',
+    'Friday' => 'Jumat',
+    'Saturday' => 'Sabtu'
+);
+
+// Mendapatkan nama hari ini
+$hari_ini = date('l'); // 'l' mengembalikan nama hari dalam teks
+
+// Mengganti nama hari dalam Bahasa Indonesia
+$hari_ini_id = isset($nama_hari[$hari_ini]) ? $nama_hari[$hari_ini] : $hari_ini;
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +105,8 @@ require('./app/database/db.php');
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3><span class="orange-text">Highlight</span> Hari Ini</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>hari <?php echo $hari_ini_id ?>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -91,7 +114,7 @@ require('./app/database/db.php');
 			<div class="row">
 			<?php 
 				$status_user = $_SESSION['user']['status'];
-				$produk = mysqli_query($conn, "SELECT * FROM produk LEFT JOIN promosi ON produk.id_produk = promosi.id_produk LIMIT 3");
+				$produk = mysqli_query($conn, "SELECT * FROM produk LEFT JOIN promosi ON produk.id_produk = promosi.id_produk WHERE produk.menu_hari = '$hari_ini_id' LIMIT 6");
 				while ($p = mysqli_fetch_array($produk)) {
 			?>
 			<a href="produk-detail.php?id_produk=<?= $p['id_produk']?>">

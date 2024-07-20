@@ -132,7 +132,7 @@ if ($row < 1) {
 								<?php } ?>
 							</tbody>
 						</table>
-						<a href="invoice.php" class="cart-btn col-md-2 text-center mt-4" style="background-color: #fa9d02;">Lihat Invoice</a>
+						<!-- <a href="invoice.php" class="cart-btn col-md-2 text-center mt-4" style="background-color: #fa9d02;">Lihat Invoice</a> -->
 					</div>
 				</div>
 			</div>

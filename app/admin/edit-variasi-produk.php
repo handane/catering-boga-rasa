@@ -60,6 +60,19 @@ if (!isset($_SESSION["admin"])) {
                         </textarea>
                       </div>
                       <div class="col-md-6">
+                        <label for="" class="form-label-md"><b>Menu Harian</b></label>
+                        <select name="menu_hari" class="form-select" id="" required>
+                          <option value="<?= $row['menu_hari'] ?>"><?= $row['menu_hari'] ?></option>
+                          <option value="Senin">Senin</option>
+                          <option value="Selasa">Selasa</option>
+                          <option value="Rabu">Rabu</option>
+                          <option value="Kamis">Kamis</option>
+                          <option value="Jumat">Jum'at</option>
+                          <option value="Sabtu">Sabtu</option>
+                          <option value="Minggu">Minggu</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
                         <label for="" class="form-label-md"><b>Gambar</b></label>
                         <input type="file" class="form-control" name="foto" required />
                       </div>
@@ -74,6 +87,7 @@ if (!isset($_SESSION["admin"])) {
                 $nama_produk = $_POST['nama_produk'];
                 $harga = $_POST['harga'];
                 $deskripsi = $_POST['deskripsi'];
+                $menu_hari = $_POST['menu_hari'];
 
                 $filename1 = $_FILES['foto']['name'];
                 $tmp_name1 = $_FILES['foto']['tmp_name'];
@@ -90,7 +104,8 @@ if (!isset($_SESSION["admin"])) {
                            nama_produk = '$nama_produk',
                            gambar = '$newname1',
                            harga = '$harga',
-                           deskripsi = '$deskripsi'
+                           deskripsi = '$deskripsi',
+                           menu_hari = '$menu_hari'
                            WHERE id_produk = '$id_produk'");
                 if ($update) {
               ?>

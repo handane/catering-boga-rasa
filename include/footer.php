@@ -4,16 +4,16 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 style="color: white;" class="widget-title">Tentang Kami</h2>
-						<p style="color: white;">Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p style="color: white; text-align:justify"><b>Catering Boga Rasa</b> menyajikan masakan rumah yang dimasak segar setiap hari, memastikan hidangan yang selalu fresh dan lezat. Kami berkomitmen untuk memberikan cita rasa autentik dengan bahan-bahan berkualitas, menghadirkan pengalaman kuliner yang memuaskan dan sehat bagi pelanggan.</p>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 style="color: white;" class="widget-title">Alamat</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Kamerun.</li>
-							<li>support@cateringbogarasa.com</li>
-							<li>+00 111 222 3333</li>
+							<li>jl. pintu air no.38 jatirahayu, pondok melati, bekasi</li>
+							<!-- <li>support@cateringbogarasa.com</li> -->
+							<!-- <li>+00 111 222 3333</li> -->
 						</ul>
 					</div>
 				</div>

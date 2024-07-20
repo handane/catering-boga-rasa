@@ -42,6 +42,16 @@ $status_user = $_SESSION['user']['status'];
 		.card {
 			border: none;
 		}
+		.tag .cart-btn {
+			border: 1px solid darkorange;
+			background: none;
+			color: darkorange;
+		}
+		.container .aktif {
+			background-color: #01abbd;
+			border-color: #01abbd ;
+			color: white;
+		}
 	</style>
 
 </head>
@@ -76,8 +86,19 @@ $status_user = $_SESSION['user']['status'];
 	<!-- end breadcrumb section -->
 
 	<!-- products -->
-	<div class="product-section mt-150 mb-150">
+	<div class="product-section mt-5 mb-150">
 		<div class="container">
+			<h3 class="text-center">Semua Menu</h3>
+		<div class="text-center tag">
+				<a href="menu-senin.php" class="cart-btn mb-4 col-md-2 text-center">Senin</a>
+				<a href="menu-selasa.php" class="cart-btn mb-4 col-md-2 text-center">Selasa</a>
+				<a href="menu-rabu.php" class="cart-btn mb-4 col-md-2 text-center">Rabu</a>
+				<a href="menu-kamis.php" class="cart-btn mb-4 col-md-2 text-center">Kamis</a>
+				<a href="menu-jumat.php" class="cart-btn mb-4 col-md-2 text-center">Jum'at</a>
+				<a href="menu-sabtu.php" class="cart-btn mb-4 col-md-2 text-center">Sabtu</a>
+				<a href="menu-minggu.php" class="cart-btn mb-4 col-md-2 text-center">Minggu</a>
+				<a href="produk.php" class="aktif cart-btn mb-4 col-md-2 text-center">Semua Produk</a>
+			</div>
 		<div class="row">
 			<?php 
 				$produk = mysqli_query($conn, "SELECT * FROM produk LEFT JOIN promosi ON produk.id_produk = promosi.id_produk");

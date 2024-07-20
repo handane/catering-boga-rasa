@@ -52,6 +52,16 @@ if (!isset($_SESSION["admin"])) {
                       <input type="file" class="form-control" id="recipient-name" autocomplete="off" name="foto">
                       <input type="text" class="form-control mt-3" id="recipient-name" autocomplete="off" name="harga" placeholder="Harga">
                       <textarea name="deskripsi" class="mt-3 form-control" id="" cols="20" rows="5" placeholder="Deskripsi"></textarea>
+                      <label class="mt-3" for="">Menu Untuk Hari</label>
+                      <select name="menu_hari" class="form-select" id="" required>
+                        <option value="Senin">Senin</option>
+                        <option value="Selasa">Selasa</option>
+                        <option value="Rabu">Rabu</option>
+                        <option value="Kamis">Kamis</option>
+                        <option value="Jumat">Jum'at</option>
+                        <option value="Sabtu">Sabtu</option>
+                        <option value="Minggu">Minggu</option>
+                      </select>
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -75,6 +85,7 @@ if (!isset($_SESSION["admin"])) {
                   $nama_produk = $_POST['nama_produk'];
                   $harga = $_POST['harga'];
                   $deskripsi = $_POST['deskripsi'];
+                  $menu_hari = $_POST['menu_hari'];
 
                   $filename1 = $_FILES['foto']['name'];
                      $tmp_name1 = $_FILES['foto']['tmp_name'];
@@ -93,7 +104,8 @@ if (!isset($_SESSION["admin"])) {
                                 '" . $nama_produk . "',
                                 '" . $newname1 . "',
                                 '" . $harga . "',
-                                '" . $deskripsi . "'
+                                '" . $deskripsi . "',
+                                '" . $menu_hari . "'
                             )");
 
                     $get_produk = mysqli_query($conn, "SELECT * FROM produk");
@@ -128,6 +140,7 @@ if (!isset($_SESSION["admin"])) {
                     <th>Gambar</th>
                     <th>Harga</th>
                     <th>Deskripsi</th>
+                    <th>Menu Harian</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -143,6 +156,7 @@ if (!isset($_SESSION["admin"])) {
                       <td><img src="./foto/<?= $p['gambar'] ?>" width="100px" alt=""></td>
                       <td style="width:130px">Rp <?php echo number_format($p['harga']); ?></td>
                       <td><?php echo substr($p['deskripsi'], 0, 100); ?></td>
+                      <td><?php echo$p['menu_hari'] ?></td>
                       <td style="width:100px">
                         <a class="btn btn-sm btn-success" href="edit-variasi-produk.php?id_produk=<?php echo $p['id_produk'] ?>"><img src="./../icons/pencil-square.svg" alt=""></a>
                         <a class="btn btn-sm btn-danger" onclick="return confirm('apakah anda yakin ingin menghapus data?')" href="delete.php?id_produk=<?php echo $p['id_produk'] ?>"><img src="./../icons/trash-fill.svg" alt=""></a>
